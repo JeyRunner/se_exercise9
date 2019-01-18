@@ -6,11 +6,21 @@
  * user guide available at https://docs.gradle.org/4.4.1/userguide/tutorial_java_projects.html
  */
 
-// Apply the java plugin to add support for Java
-apply plugin: 'java'
+plugins{
+    // Apply the java plugin to add support for Java
+    id 'java'
 
-// Apply the application plugin to add support for building an application
-apply plugin: 'application'
+    // Apply the application plugin to add support for building an application
+    id 'application'
+
+    // add checkstyle
+    id 'checkstyle'
+
+    // add spotbugs
+    id 'com.github.spotbugs' version '1.6.9'
+}
+
+
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -19,7 +29,7 @@ repositories {
     jcenter()
 }
 
-
+sourceCompatibility = 1.8
 
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
@@ -32,3 +42,14 @@ dependencies {
 // Define the main class for the application
 mainClassName = 'App'
 
+
+
+// config
+checkstyle {
+    configFile = 'checkstyle.xml' as File
+}
+
+
+spotbugs {
+    ignoreFailures = false
+}
