@@ -17,7 +17,7 @@ plugins{
     id 'checkstyle'
 
     // add spotbugs
-    id 'com.github.spotbugs' version '1.6.9'
+    id "com.github.spotbugs" version "1.6.9"
 }
 
 
@@ -46,10 +46,12 @@ mainClassName = 'App'
 
 // config
 checkstyle {
+    toolVersion "7.6.1"
     configFile = 'checkstyle.xml' as File
 }
 
 
+
 spotbugs {
-    ignoreFailures = false
+    //ignoreFailures = false
 }
