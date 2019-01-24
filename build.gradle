@@ -53,5 +53,5 @@ checkstyle {
 
 
 spotbugs {
-    //ignoreFailures = false
+    ignoreFailures = false
 }
