@@ -40,7 +40,7 @@ dependencies {
 }
 
 // Define the main class for the application
-mainClassName = 'App'
+mainClassName = 'de.tud.cs.se.flashcards.Main'
 
 
 
@@ -50,8 +50,13 @@ checkstyle {
     configFile = 'checkstyle.xml' as File
 }
 
-
-
 spotbugs {
     ignoreFailures = false
+}
+
+
+jar {
+    manifest {
+        attributes("Main-Class": "de.tud.cs.se.flashcards.Main")
+    }
 }
